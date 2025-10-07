@@ -91,7 +91,7 @@ app.post('/prepare-pdf', (req, res) => {
     pdf.create(finalHtml, { 
         format: 'A4', 
         border: '15mm', 
-        quality: 50,
+        quality: 100,
         timeout: 30000 // 30 seconds timeout
     }).toBuffer((err, buffer) => {
         if (err) {
@@ -128,4 +128,5 @@ app.get('/download/:id', (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`🚀 PDF API Server listening on http://localhost:${PORT}`));
+
 
